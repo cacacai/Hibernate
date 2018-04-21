@@ -40,60 +40,24 @@ catch (Exception e) {
 4|**Connection close()**  通过释放和清理 JDBC 连接以结束该会话。
 5|**Criteria createCriteria(Class persistentClass)**  为给定的实体类或实体类的超类创建一个新的 Criteria 实例。
 6|**Criteria createCriteria(String entityName)**  为给定的实体名称创建一个新的 Criteria 实例。
-7|**Serializable getIdentifier(Object object)**  
-返回与给定实体相关联的会话的标识符值。
-8|**Query createFilter(Object collection, String queryString)**  
-为给定的集合和过滤字符创建查询的新实例。
+7|**Serializable getIdentifier(Object object)**  返回与给定实体相关联的会话的标识符值。
+8|**Query createFilter(Object collection, String queryString)**  为给定的集合和过滤字符创建查询的新实例。
+9|**Query createQuery(String queryString)**  为给定的 HQL 查询字符创建查询的新实例。
+10|**SQLQuery createSQLQuery(String queryString)**  为给定的 SQL 查询字符串创建 SQLQuery 的新实例。
+11|**void delete(Object object)**  从数据存储中删除持久化实例。
+12|**void delete(String entityName, Object object)**  从数据存储中删除持久化实例。
 
-9
+13**Session get(String entityName, Serializable id)**  返回给定命名的且带有给定标识符或 null 的持久化实例（若无该种持久化实例）。
 
-**Query createQuery(String queryString)**  
-为给定的 HQL 查询字符创建查询的新实例。
+14**SessionFactory getSessionFactory()**  获取创建该会话的 session 工厂。
 
-10
+15**void refresh(Object object)**  从基本数据库中重新读取给定实例的状态。
 
-**SQLQuery createSQLQuery(String queryString)**  
-为给定的 SQL 查询字符串创建 SQLQuery 的新实例。
+16**Transaction getTransaction()**  获取与该 session 关联的事务实例。
 
-11
+17**boolean isConnected()**  检查当前 session 是否连接。
 
-**void delete(Object object)**  
-从数据存储中删除持久化实例。
-
-12
-
-**void delete(String entityName, Object object)**  
-从数据存储中删除持久化实例。
-
-13
-
-**Session get(String entityName, Serializable id)**  
-返回给定命名的且带有给定标识符或 null 的持久化实例（若无该种持久化实例）。
-
-14
-
-**SessionFactory getSessionFactory()**  
-获取创建该会话的 session 工厂。
-
-15
-
-**void refresh(Object object)**  
-从基本数据库中重新读取给定实例的状态。
-
-16
-
-**Transaction getTransaction()**  
-获取与该 session 关联的事务实例。
-
-17
-
-**boolean isConnected()**  
-检查当前 session 是否连接。
-
-18
-
-**boolean isDirty()**  
-该 session 中是否包含必须与数据库同步的变化？
+18**boolean isDirty()**  该 session 中是否包含必须与数据库同步的变化？
 
 19
 
@@ -120,6 +84,5 @@ catch (Exception e) {
 **void update(String entityName, Object object)**  
 更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjg0NTA3NDQsLTEwODE2MjE1MjFdfQ
-==
+eyJoaXN0b3J5IjpbNzg1MjI3MDIwLC0xMDgxNjIxNTIxXX0=
 -->
