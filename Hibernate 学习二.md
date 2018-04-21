@@ -10,7 +10,8 @@ Session 用于获取与数据库的物理连接。 Session 对象是轻量级的
 若 Session 实例的持久态类别是序列化的，则该 Session 实例是序列化的。一个典型的事务应该使用以下语法：
 
 ```
-Session session = factory.openSession();
+Session session = factory.openSession();\
+//Session session = factory.getSession();
 Transaction tx = null;
 try {
    tx = session.beginTransaction();
@@ -58,5 +59,5 @@ catch (Exception e) {
 22|**void update(Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 23|**void update(String entityName, Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyNjY4ODUzMiwtMTA4MTYyMTUyMV19
+eyJoaXN0b3J5IjpbLTk5NTYyMTYzNSwtMTA4MTYyMTUyMV19
 -->
