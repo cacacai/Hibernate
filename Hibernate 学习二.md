@@ -6,7 +6,7 @@ Session 用于获取与数据库的物理连接。 Session 对象是轻量级的
 
 -   **瞬时状态(transient)**: 一种新的持久性实例，被 Hibernate 认为是瞬时的，它不与 Session 相关联，在数据库中没有与之关联的记录且无标识符值。
 -   **持久状态(persistent)**：可以将一个瞬时状态实例通过与一个 Session 关联的方式将其转化为持久状态实例。持久状态实例在数据库中没有与之关联的记录，有标识符值，并与一个 Session 关联。
--   **脱管状态(transient)**：一旦关闭 Hibernate Session，持久状态实例将会成为脱管状态实例。
+-   **脱管状态(detached)**：一旦关闭 Hibernate Session，持久状态实例将会成为脱管状态实例。
 
 若 Session 实例的持久态类别是序列化的，则该 Session 实例是序列化的。一个典型的事务应该使用以下语法：
 
@@ -59,6 +59,6 @@ catch (Exception e) {
 22|**void update(Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 23|**void update(String entityName, Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTE0NDMxODksLTQxMDkxMTY2NywxOD
-Y5OTM0NDM1LC0xMDgxNjIxNTIxXX0=
+eyJoaXN0b3J5IjpbMTUxNjc0ODI1MSwtNDEwOTExNjY3LDE4Nj
+k5MzQ0MzUsLTEwODE2MjE1MjFdfQ==
 -->
