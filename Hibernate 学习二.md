@@ -38,25 +38,11 @@ catch (Exception e) {
 2|**void cancelQuery()**  取消当前的查询执行。
 3|**void clear()**  完全清除该会话。
 4|**Connection close()**  通过释放和清理 JDBC 连接以结束该会话。
-
-5
-
-**Criteria createCriteria(Class persistentClass)**  
-为给定的实体类或实体类的超类创建一个新的 Criteria 实例。
-
-6
-
-**Criteria createCriteria(String entityName)**  
-为给定的实体名称创建一个新的 Criteria 实例。
-
-7
-
-**Serializable getIdentifier(Object object)**  
+5|**Criteria createCriteria(Class persistentClass)**  为给定的实体类或实体类的超类创建一个新的 Criteria 实例。
+6|**Criteria createCriteria(String entityName)**  为给定的实体名称创建一个新的 Criteria 实例。
+7|**Serializable getIdentifier(Object object)**  
 返回与给定实体相关联的会话的标识符值。
-
-8
-
-**Query createFilter(Object collection, String queryString)**  
+8|**Query createFilter(Object collection, String queryString)**  
 为给定的集合和过滤字符创建查询的新实例。
 
 9
@@ -134,5 +120,6 @@ catch (Exception e) {
 **void update(String entityName, Object object)**  
 更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzk2MDEwMDAwLC0xMDgxNjIxNTIxXX0=
+eyJoaXN0b3J5IjpbLTExNjg0NTA3NDQsLTEwODE2MjE1MjFdfQ
+==
 -->
