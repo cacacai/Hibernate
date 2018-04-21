@@ -46,43 +46,17 @@ catch (Exception e) {
 10|**SQLQuery createSQLQuery(String queryString)**  为给定的 SQL 查询字符串创建 SQLQuery 的新实例。
 11|**void delete(Object object)**  从数据存储中删除持久化实例。
 12|**void delete(String entityName, Object object)**  从数据存储中删除持久化实例。
-
-13**Session get(String entityName, Serializable id)**  返回给定命名的且带有给定标识符或 null 的持久化实例（若无该种持久化实例）。
-
-14**SessionFactory getSessionFactory()**  获取创建该会话的 session 工厂。
-
-15**void refresh(Object object)**  从基本数据库中重新读取给定实例的状态。
-
-16**Transaction getTransaction()**  获取与该 session 关联的事务实例。
-
-17**boolean isConnected()**  检查当前 session 是否连接。
-
-18**boolean isDirty()**  该 session 中是否包含必须与数据库同步的变化？
-
-19
-
-**boolean isOpen()**  
-检查该 session 是否仍处于开启状态。
-
-20
-
-**Serializable save(Object object)**  
-先分配一个生成的标识，以保持给定的瞬时状态实例。
-
-21
-
-**void saveOrUpdate(Object object)**  
-保存（对象）或更新（对象）给定的实例。
-
-22
-
-**void update(Object object)**  
-更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
-
-23
-
-**void update(String entityName, Object object)**  
-更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
+13|**Session get(String entityName, Serializable id)**  返回给定命名的且带有给定标识符或 null 的持久化实例（若无该种持久化实例）。
+14|**SessionFactory getSessionFactory()**  获取创建该会话的 session 工厂。
+15|**void refresh(Object object)**  从基本数据库中重新读取给定实例的状态。
+16|**Transaction getTransaction()**  获取与该 session 关联的事务实例。
+17|**boolean isConnected()**  检查当前 session 是否连接。
+18|**boolean isDirty()**  该 session 中是否包含必须与数据库同步的变化？
+19|**boolean isOpen()**  检查该 session 是否仍处于开启状态。
+20|**Serializable save(Object object)**  先分配一个生成的标识以保持给定的瞬时状态实例。
+21|**void saveOrUpdate(Object object)**  保存（对象）或更新（对象）给定的实例。
+22|**void update(Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
+23|**void update(String entityName, Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzg1MjI3MDIwLC0xMDgxNjIxNTIxXX0=
+eyJoaXN0b3J5IjpbMTAyNjY4ODUzMiwtMTA4MTYyMTUyMV19
 -->
