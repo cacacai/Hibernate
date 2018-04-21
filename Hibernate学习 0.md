@@ -7,7 +7,6 @@ Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行�
 
 ##  Hibernate工作原理
 ![](http://markdownpic.oss-cn-shenzhen.aliyuncs.com/18-4-21/67943209.jpg)
-![](http://markdownpic.oss-cn-shenzhen.aliyuncs.com/18-4-21/67943209.jpg)
 1. 配置好hibernate的配置文件和与类对应的配置文件后，启动服务器
 
 2. 服务器通过实例化Configeration对象，读取hibernate.cfg.xml文件的配置内容，并根据相关的需求建好表或者和表建立好映射关系
@@ -44,5 +43,5 @@ Hibernate提供SQL HQL Criteria查询方式。HQL是其中运用最广泛的查�
 
 >  转载自知乎专栏
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ2NzE4NTk0LDE5NTQ5NzU0Ml19
+eyJoaXN0b3J5IjpbMTkzNDQyODM0NCwxOTU0OTc1NDJdfQ==
 -->
