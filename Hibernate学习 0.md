@@ -25,11 +25,7 @@ Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行�
 在这个文件中定义了数据库进行连接所需要的信息，包括JDBC驱动、用户名、密码、数据库方言等，configuration类借助dom4j的XML解析器解析设置环境，然后使用这些环境属性来生成 SessionFactory。这样这个sessionFactory生成的session就能成功获得数据库的连接。
 
 ### Hibernate是如何进行数据库写操作  
-对数据库的写操作包括保存、更新和删除，当保存一个POJO持久对象时，触发Hibernate的保存事件监听器
-
-进行处理。Hibernate通过映射文件获得对象对应数据库表名以及属性所对应的表中的列名，然后通过反射机制
-
-持久化对象（实体对象）的各个属性，最终组织成向数据库插入新对象的SQL insert语句。调用了session.save()方法后，这个对象会标识成持久化状态存放在session中，对于Hibernate来说它就是一个持久化了的对象，但这个时候Hibernate还不会真正的执行insert语句，当进行session的刷新同部或事务提交时，Hibernate会把session缓存中的所有SQL语句一起执行，对于更新、删除操作也是采用类似的机制。
+对数据库的写操作包括保存、更新和删除，当保存一个POJO持久对象时，触发Hibernate的保存事件监听器进行处理。Hibernate通过映射文件获得对象对应数据库表名以及属性所对应的表中的列名，然后通过反射机制持久化对象（实体对象）的各个属性，最终组织成向数据库插入新对象的SQL insert语句。调用了session.save()方法后，这个对象会标识成持久化状态存放在session中，对于Hibernate来说它就是一个持久化了的对象，但这个时候Hibernate还不会真正的执行insert语句，当进行session的刷新同部或事务提交时，Hibernate会把session缓存中的所有SQL语句一起执行，对于更新、删除操作也是采用类似的机制。
 
 然后，提交事务并事务提交成功后，这些写操作就会被永久地保存进数据库中，所以，使用session对数据库操作还依赖于Hibernate事务的处理。如果设置了二级缓存，那么这些操作会被同步到二级缓存中，Hibernate对数据库最终操作也是依赖于底层JDBC对数据库进行。
 
@@ -43,5 +39,6 @@ Hibernate提供SQL HQL Criteria查询方式。HQL是其中运用最广泛的查�
 
 >  转载自知乎专栏
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzNDQyODM0NCwxOTU0OTc1NDJdfQ==
+eyJoaXN0b3J5IjpbMTk1NjkwMzczNiwxOTM0NDI4MzQ0LDE5NT
+Q5NzU0Ml19
 -->
