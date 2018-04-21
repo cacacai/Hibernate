@@ -10,6 +10,7 @@ Session 用于获取与数据库的物理连接。 Session 对象是轻量级的
 
 ![](http://markdownpic.oss-cn-shenzhen.aliyuncs.com/18-4-21/67943209.jpg)  从图中看出session中的方法并不会直接操作数据库，只会把映射实体类的实例进行三种状态缓存在一级缓存中，只有提交事务的时候才会进行数据库操作，类型于sql语句进行insert，delete，update等操作。  同时会与数据库查询的hql语句也是对于实例进行操作而不是数据库表。对于原生的 SQL 查询的 createSqlQuery() 方法的字符串时，可以将 SQL 的结果与现有的 Hibernate 实体，一个连接，或一个标量结果分别使用 addEntity(), addJoin(), 和 addScalar() 方法进行关联。  一个典型的事务应该使用以下语法：
 
+> 更详细的概念查看http://www.cnblogs.com/whgk/p/6103038.html
 ```
 Session session = factory.openSession();\
 //Session session = factory.getSession();
@@ -85,7 +86,8 @@ Session的delete()方法用于从数据库中删除一个java对象。delete()�
 ## 示例
 在学习一基础上使用session来对数据库进行增删查改
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjg2NjYyNDMsNDQyNzg5NDU5LDE2MT
-E1MzcyNjYsLTc3NDA2MDQ0NSwxNTE2NzQ4MjUxLC00MTA5MTE2
-NjcsMTg2OTkzNDQzNSwtMTA4MTYyMTUyMV19
+eyJoaXN0b3J5IjpbMTQ4NDg2ODIxNCwtMTM2ODY2NjI0Myw0ND
+I3ODk0NTksMTYxMTUzNzI2NiwtNzc0MDYwNDQ1LDE1MTY3NDgy
+NTEsLTQxMDkxMTY2NywxODY5OTM0NDM1LC0xMDgxNjIxNTIxXX
+0=
 -->
