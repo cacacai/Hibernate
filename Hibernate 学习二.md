@@ -26,12 +26,11 @@ catch (Exception e) {
    session.close();
 }
 ```
-
 如果 Session 引发异常，则事务必须被回滚，该 session 必须被丢弃。
 
 ## Session 接口方法
 
-**Session**  接口提供了很多方法，但在以下讲解中我将仅列出几个我们会在本教程中应用的重要方法。您可以查看 Hibernate 文件，查询与  **Session**  及  **SessionFactory**  相关的完整方法目录。
+**Session**  接口提供了很多方法，以下只是仅列出几个重要方法。您可以查看 Hibernate 文件，查询与  **Session**  及  **SessionFactory**  相关的完整方法目录。
 
 序号 |Session 方法及说明
 --------|--------
@@ -59,5 +58,5 @@ catch (Exception e) {
 22|**void update(Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 23|**void update(String entityName, Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5NTYyMTYzNSwtMTA4MTYyMTUyMV19
+eyJoaXN0b3J5IjpbMTg2OTkzNDQzNSwtMTA4MTYyMTUyMV19
 -->
