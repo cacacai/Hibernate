@@ -41,6 +41,8 @@ Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行�
 ### Hibernate如何进行数据库查询操作
 
 Hibernate提供SQL HQL Criteria查询方式。HQL是其中运用最广泛的查询方式。用户使用session.createQuery()方法以一条HQL语句为参数创建 Query查询对象后，Hibernate会使用Anltr库把HQL语句解析成JDBC可以识别的SQL语句，如果设置了查询缓存，那么执行 Query.list()时，Hibernate会先对查询缓存进行查询，如果查询缓存不存在，再使用select语句查询数据库。
+
+>  转载自知乎专栏
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1NDk3NTQyXX0=
+eyJoaXN0b3J5IjpbNzQ2NzE4NTk0LDE5NTQ5NzU0Ml19
 -->
