@@ -12,7 +12,7 @@ Session 用于获取与数据库的物理连接。 Session 对象是轻量级的
 
 > 更详细的概念查看http://www.cnblogs.com/whgk/p/6103038.html
 ```
-Session session = factory.openSession();\
+Session session = factory.openSession();
 //Session session = factory.getSession();
 Transaction tx = null;
 try {
@@ -87,8 +87,8 @@ Session的delete()方法用于从数据库中删除一个java对象。delete()�
 在学习一基础上使用session来对数据库进行增删查改
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzIxNzAyMDQsMTQ4NDg2ODIxNCwtMT
-M2ODY2NjI0Myw0NDI3ODk0NTksMTYxMTUzNzI2NiwtNzc0MDYw
-NDQ1LDE1MTY3NDgyNTEsLTQxMDkxMTY2NywxODY5OTM0NDM1LC
-0xMDgxNjIxNTIxXX0=
+eyJoaXN0b3J5IjpbLTEzNjA2NDM0MjAsLTEyMzIxNzAyMDQsMT
+Q4NDg2ODIxNCwtMTM2ODY2NjI0Myw0NDI3ODk0NTksMTYxMTUz
+NzI2NiwtNzc0MDYwNDQ1LDE1MTY3NDgyNTEsLTQxMDkxMTY2Ny
+wxODY5OTM0NDM1LC0xMDgxNjIxNTIxXX0=
 -->
