@@ -1,4 +1,5 @@
 # hibernate之session
+[TOC]
 Session 用于获取与数据库的物理连接。 Session 对象是轻量级的，并且设计为在每次需要与数据库进行交互时被实例化。持久态对象被保存，并通过 Session 对象检索找回。
 
 该 Session 对象不应该长时间保持开放状态，因为它们通常不能保证线程安全，而应该根据需求被创建和销毁。Session 的主要功能是为映射实体类的实例提供创建，读取和删除操作。这些实例可能在给定时间点时存在于以下三种状态之一：
@@ -58,5 +59,6 @@ catch (Exception e) {
 22|**void update(Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 23|**void update(String entityName, Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2OTkzNDQzNSwtMTA4MTYyMTUyMV19
+eyJoaXN0b3J5IjpbLTQxMDkxMTY2NywxODY5OTM0NDM1LC0xMD
+gxNjIxNTIxXX0=
 -->
