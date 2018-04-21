@@ -59,10 +59,37 @@ catch (Exception e) {
 22|**void update(Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 23|**void update(String entityName, Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 
+- Session的save()方法:
+Session的save()方法使一个临时对象转变为持久化对象
 (1)将临时对象加入到Session缓存中，使其进入持久化状态。  
 (2)选用映射文件指定的标识符生成器，为持久化对象分配唯一的ID。  
 (3)计划执行一个insert语句
+注意：session的save()方法是用来持久化临时对象的。不应将持久化对象或游离对象传递给save()方法
+
+若将持久化对象传递给save()方法，则该步保存操作是多余的。  
+若将游离对象传递给save()方法，则会重新生成ID，再保存一次
+
+  
+
+**Session的update()方法:**
+
+Session的update()方法使一个脱管对象转变为持久化对象。它完成以下操作：  
+(1)将游离对象加入到Session缓存中，使其转变为持久化对象。  
+(2)计划执行一个update语句。  
+
+  
+
+**Session的saveOrUpdate()方法：**
+
+Session的saveOrUpdate()方法同时包含了save()方法与update()方法的功能，如果传入的参数是临时对象，就调用save()方法；如果传入的参数是游离对象，就调用update()方法。  
+
+**Session的delete()方法**：  
+
+Session的delete()方法用于从数据库中删除一个java对象。delete()方法既可以删除持久化对象，也可以删除脱管对象。其处理过程如下：  
+(1)如果传入的参数是脱管对象，则先使脱管对象与Session关联，使它变为持久化对象。如果参数是持久化对象，则忽略该步。  
+(2)计划执行一个delete语句。  
+(3)把对象从Session缓存中删除，该对象进入删除状态。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MjE2Njk2NzAsMTUxNjc0ODI1MSwtND
+eyJoaXN0b3J5IjpbLTIxMTA5MjQ3MDQsMTUxNjc0ODI1MSwtND
 EwOTExNjY3LDE4Njk5MzQ0MzUsLTEwODE2MjE1MjFdfQ==
 -->
