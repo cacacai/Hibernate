@@ -33,27 +33,11 @@ catch (Exception e) {
 **Session**  接口提供了很多方法，但在以下讲解中我将仅列出几个我们会在本教程中应用的重要方法。您可以查看 Hibernate 文件，查询与  **Session**  及  **SessionFactory**  相关的完整方法目录。
 
 序号 |Session 方法及说明
---|
-
-1
-
-**Transaction beginTransaction()**  
-开始工作单位，并返回关联事务对象。
-
-2
-
-**void cancelQuery()**  
-取消当前的查询执行。
-
-3
-
-**void clear()**  
-完全清除该会话。
-
-4
-
-**Connection close()**  
-通过释放和清理 JDBC 连接以结束该会话。
+--------|--------
+1|**Transaction beginTransaction()**  开始工作单位，并返回关联事务对象。
+2|**void cancelQuery()**  取消当前的查询执行。
+3|**void clear()**  完全清除该会话。
+4|**Connection close()**  通过释放和清理 JDBC 连接以结束该会话。
 
 5
 
@@ -150,6 +134,5 @@ catch (Exception e) {
 **void update(String entityName, Object object)**  
 更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODc0MTE0OTIsLTEwODE2MjE1MjFdfQ
-==
+eyJoaXN0b3J5IjpbNzk2MDEwMDAwLC0xMDgxNjIxNTIxXX0=
 -->
