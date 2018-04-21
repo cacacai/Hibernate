@@ -54,11 +54,15 @@ catch (Exception e) {
 17|**boolean isConnected()**  检查当前 session 是否连接。
 18|**boolean isDirty()**  该 session 中是否包含必须与数据库同步的变化？
 19|**boolean isOpen()**  检查该 session 是否仍处于开启状态。
-20|**Serializable save(Object object)**  先分配一个生成的标识以保持给定的瞬时状态实例。
+**20**|**Serializable save(Object object)**  先分配一个生成的标识以保持给定的瞬时状态实例。
 21|**void saveOrUpdate(Object object)**  保存（对象）或更新（对象）给定的实例。
 22|**void update(Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
 23|**void update(String entityName, Object object)**  更新带有标识符且是给定的处于脱管状态的实例的持久化实例。
+
+(1)将临时对象加入到Session缓存中，使其进入持久化状态。  
+(2)选用映射文件指定的标识符生成器，为持久化对象分配唯一的ID。  
+(3)计划执行一个insert语句
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxNjc0ODI1MSwtNDEwOTExNjY3LDE4Nj
-k5MzQ0MzUsLTEwODE2MjE1MjFdfQ==
+eyJoaXN0b3J5IjpbLTE3MjE2Njk2NzAsMTUxNjc0ODI1MSwtND
+EwOTExNjY3LDE4Njk5MzQ0MzUsLTEwODE2MjE1MjFdfQ==
 -->
