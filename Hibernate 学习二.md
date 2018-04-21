@@ -1,4 +1,4 @@
-# hibernate之session
+# Hibernate之session
 [TOC]
 Session 用于获取与数据库的物理连接。 Session 对象是轻量级的，并且设计为在每次需要与数据库进行交互时被实例化。持久态对象被保存，并通过 Session 对象检索找回。
 
@@ -77,13 +77,12 @@ Session的update()方法使一个脱管对象转变为持久化对象。它完�
 - Session的saveOrUpdate()方法：
 Session的saveOrUpdate()方法同时包含了save()方法与update()方法的功能，如果传入的参数是临时对象，就调用save()方法；如果传入的参数是游离对象，就调用update()方法。  
 
-**Session的delete()方法**：  
-
+- Session的delete()方法
 Session的delete()方法用于从数据库中删除一个java对象。delete()方法既可以删除持久化对象，也可以删除脱管对象。其处理过程如下：  
 (1)如果传入的参数是脱管对象，则先使脱管对象与Session关联，使它变为持久化对象。如果参数是持久化对象，则忽略该步。  
 (2)计划执行一个delete语句。  
 (3)把对象从Session缓存中删除，该对象进入删除状态。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTM0MjUyODAsMTUxNjc0ODI1MSwtND
-EwOTExNjY3LDE4Njk5MzQ0MzUsLTEwODE2MjE1MjFdfQ==
+eyJoaXN0b3J5IjpbLTc3NDA2MDQ0NSwxNTE2NzQ4MjUxLC00MT
+A5MTE2NjcsMTg2OTkzNDQzNSwtMTA4MTYyMTUyMV19
 -->
