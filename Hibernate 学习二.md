@@ -82,7 +82,9 @@ Session的delete()方法用于从数据库中删除一个java对象。delete()�
 (1)如果传入的参数是脱管对象，则先使脱管对象与Session关联，使它变为持久化对象。如果参数是持久化对象，则忽略该步。  
 (2)计划执行一个delete语句。  
 (3)把对象从Session缓存中删除，该对象进入删除状态。
+## 示例
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3NDA2MDQ0NSwxNTE2NzQ4MjUxLC00MT
-A5MTE2NjcsMTg2OTkzNDQzNSwtMTA4MTYyMTUyMV19
+eyJoaXN0b3J5IjpbMTYxMTUzNzI2NiwtNzc0MDYwNDQ1LDE1MT
+Y3NDgyNTEsLTQxMDkxMTY2NywxODY5OTM0NDM1LC0xMDgxNjIx
+NTIxXX0=
 -->
