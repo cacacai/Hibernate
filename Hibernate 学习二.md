@@ -86,12 +86,58 @@ Session的delete()方法用于从数据库中删除一个java对象。delete()�
 ## 示例
 在学习一基础上使用session来对数据库进行增删查改
 ### 使用save,update,delete方法
-
+```
+public int Save(travel myinstance ){
+		int result=0;
+		try{
+			Session myse=sessionft.HibernateSessionFactory.getSession();
+			Transaction ts = myse.beginTransaction();
+			myse.persist(myinstance);
+			ts.commit();
+			if(myinstance.getId()!=null)result= 1;
+		}
+		catch(HibernateException e){System.out.print(e.toString());}
+		return result;
+	}
+	
+	public int Update(long id,travel mydata){
+		int result=0;
+		try{
+			Session myse=sessionft.HibernateSessionFactory.getSession();
+			Transaction ts = myse.beginTransaction();
+			travel myinstance = (travel)myse.get(travel.class, id);
+			myinstance.setSpot(mydata.getSpot());
+			myinstance.setLine(mydata.getLine());
+			myinstance.setPrice(mydata.getPrice());
+			myinstance.setNum(mydata.getNum());
+			myse.saveOrUpdate(myinstance);
+			ts.commit();
+			myinstance = (travel)myse.get(travel.class, id);
+			if(myinstance !=null)return 1;
+		}
+		catch(HibernateException e){System.out.print(e.toString());}
+		return result;
+	}
+	
+	public int Delete(long id){
+		int result=0;
+		try{
+			Session myse=sessionft.HibernateSessionFactory.getSession();
+			Transaction ts = myse.beginTransaction();
+			travel myinstance = (travel)myse.get(travel.class, id);
+			myse.delete(myinstance);
+			//myse.saveOrUpdate(myinstance);
+			ts.commit();
+			return 1;
+		}
+		catch(HibernateException e){System.out.print(e.toString());}
+		return result;
+	}
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1NjM5MzM3NSwtMTM2MDY0MzQyMCwtMT
-IzMjE3MDIwNCwxNDg0ODY4MjE0LC0xMzY4NjY2MjQzLDQ0Mjc4
-OTQ1OSwxNjExNTM3MjY2LC03NzQwNjA0NDUsMTUxNjc0ODI1MS
-wtNDEwOTExNjY3LDE4Njk5MzQ0MzUsLTEwODE2MjE1MjFdfQ==
-
+eyJoaXN0b3J5IjpbNTU1MDUwODYwLC0xMzYwNjQzNDIwLC0xMj
+MyMTcwMjA0LDE0ODQ4NjgyMTQsLTEzNjg2NjYyNDMsNDQyNzg5
+NDU5LDE2MTE1MzcyNjYsLTc3NDA2MDQ0NSwxNTE2NzQ4MjUxLC
+00MTA5MTE2NjcsMTg2OTkzNDQzNSwtMTA4MTYyMTUyMV19
 -->
