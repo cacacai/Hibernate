@@ -85,10 +85,13 @@ Session的delete()方法用于从数据库中删除一个java对象。delete()�
 (3)把对象从Session缓存中删除，该对象进入删除状态。
 ## 示例
 在学习一基础上使用session来对数据库进行增删查改
+### 使用save,update,delete方法
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjA2NDM0MjAsLTEyMzIxNzAyMDQsMT
-Q4NDg2ODIxNCwtMTM2ODY2NjI0Myw0NDI3ODk0NTksMTYxMTUz
-NzI2NiwtNzc0MDYwNDQ1LDE1MTY3NDgyNTEsLTQxMDkxMTY2Ny
-wxODY5OTM0NDM1LC0xMDgxNjIxNTIxXX0=
+eyJoaXN0b3J5IjpbMTc1NjM5MzM3NSwtMTM2MDY0MzQyMCwtMT
+IzMjE3MDIwNCwxNDg0ODY4MjE0LC0xMzY4NjY2MjQzLDQ0Mjc4
+OTQ1OSwxNjExNTM3MjY2LC03NzQwNjA0NDUsMTUxNjc0ODI1MS
+wtNDEwOTExNjY3LDE4Njk5MzQ0MzUsLTEwODE2MjE1MjFdfQ==
+
 -->
