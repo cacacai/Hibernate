@@ -126,7 +126,6 @@ public int Save(travel myinstance ){
 			Transaction ts = myse.beginTransaction();
 			travel myinstance = (travel)myse.get(travel.class, id);
 			myse.delete(myinstance);
-			//myse.saveOrUpdate(myinstance);
 			ts.commit();
 			return 1;
 		}
@@ -136,8 +135,9 @@ public int Save(travel myinstance ){
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU1MDUwODYwLC0xMzYwNjQzNDIwLC0xMj
-MyMTcwMjA0LDE0ODQ4NjgyMTQsLTEzNjg2NjYyNDMsNDQyNzg5
-NDU5LDE2MTE1MzcyNjYsLTc3NDA2MDQ0NSwxNTE2NzQ4MjUxLC
-00MTA5MTE2NjcsMTg2OTkzNDQzNSwtMTA4MTYyMTUyMV19
+eyJoaXN0b3J5IjpbLTE4NDU2MzgyNjQsLTEzNjA2NDM0MjAsLT
+EyMzIxNzAyMDQsMTQ4NDg2ODIxNCwtMTM2ODY2NjI0Myw0NDI3
+ODk0NTksMTYxMTUzNzI2NiwtNzc0MDYwNDQ1LDE1MTY3NDgyNT
+EsLTQxMDkxMTY2NywxODY5OTM0NDM1LC0xMDgxNjIxNTIxXX0=
+
 -->
