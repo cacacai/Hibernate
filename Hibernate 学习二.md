@@ -87,57 +87,72 @@ Session的delete()方法用于从数据库中删除一个java对象。delete()�
 在学习一基础上使用session来对数据库进行增删查改
 ### 使用save,update,delete方法
 ```
-public int Save(travel myinstance ){
-		int result=0;
-		try{
-			Session myse=sessionft.HibernateSessionFactory.getSession();
-			Transaction ts = myse.beginTransaction();
-			myse.persist(myinstance);
-			ts.commit();
-			if(myinstance.getId()!=null)result= 1;
+	public int save(Travel travel) {
+		int result=1;
+		Session myse=HibernateSessionFactory.getSession();
+		Transaction tx=null;
+		try {
+			tx=myse.beginTransaction();
+			myse.save(travel);
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx!=null) {//插入失败，事务回滚
+				tx.rollback();
+				result=0;
+			}
+			e.printStackTrace();
+		}finally {
+			myse.close();
 		}
-		catch(HibernateException e){System.out.print(e.toString());}
+		return result;
+	}
+	public int delete(int id) {
+		int result=1;
+		Session myse=HibernateSessionFactory.getSession();
+		Transaction tx=null;
+		try {
+			tx=myse.beginTransaction();
+			Travel travel=new Travel();
+			travel.setId((long) id);
+			myse.delete(travel);
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx!=null) {// 删除失败，事务回滚
+				tx.rollback();
+				result=0;
+			}
+			e.printStackTrace();
+		}finally {
+			myse.close();
+		}
 		return result;
 	}
 	
-	public int Update(long id,travel mydata){
-		int result=0;
-		try{
-			Session myse=sessionft.HibernateSessionFactory.getSession();
-			Transaction ts = myse.beginTransaction();
-			travel myinstance = (travel)myse.get(travel.class, id);
-			myinstance.setSpot(mydata.getSpot());
-			myinstance.setLine(mydata.getLine());
-			myinstance.setPrice(mydata.getPrice());
-			myinstance.setNum(mydata.getNum());
-			myse.saveOrUpdate(myinstance);
-			ts.commit();
-			myinstance = (travel)myse.get(travel.class, id);
-			if(myinstance !=null)return 1;
+	public int update(Travel travel) {
+		int result=1;
+		Session myse=HibernateSessionFactory.getSession();
+		Transaction tx=null;
+		try {
+			tx=myse.beginTransaction();
+			myse.update(travel);
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx!=null) {// 删除失败，事务回滚
+				tx.rollback();
+				result=0;
+			}
+			e.printStackTrace();
+		}finally {
+			myse.close();
 		}
-		catch(HibernateException e){System.out.print(e.toString());}
-		return result;
-	}
-	
-	public int Delete(long id){
-		int result=0;
-		try{
-			Session myse=sessionft.HibernateSessionFactory.getSession();
-			Transaction ts = myse.beginTransaction();
-			travel myinstance = (travel)myse.get(travel.class, id);
-			myse.delete(myinstance);
-			ts.commit();
-			return 1;
-		}
-		catch(HibernateException e){System.out.print(e.toString());}
 		return result;
 	}
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDU2MzgyNjQsLTEzNjA2NDM0MjAsLT
-EyMzIxNzAyMDQsMTQ4NDg2ODIxNCwtMTM2ODY2NjI0Myw0NDI3
-ODk0NTksMTYxMTUzNzI2NiwtNzc0MDYwNDQ1LDE1MTY3NDgyNT
-EsLTQxMDkxMTY2NywxODY5OTM0NDM1LC0xMDgxNjIxNTIxXX0=
+eyJoaXN0b3J5IjpbLTk1ODk0NDg0MiwtMTM2MDY0MzQyMCwtMT
+IzMjE3MDIwNCwxNDg0ODY4MjE0LC0xMzY4NjY2MjQzLDQ0Mjc4
+OTQ1OSwxNjExNTM3MjY2LC03NzQwNjA0NDUsMTUxNjc0ODI1MS
+wtNDEwOTExNjY3LDE4Njk5MzQ0MzUsLTEwODE2MjE1MjFdfQ==
 
 -->
