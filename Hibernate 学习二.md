@@ -148,11 +148,32 @@ Session的delete()方法用于从数据库中删除一个java对象。delete()�
 		return result;
 	}
 ```
+### 使用hql语法
+```
+public List<Travel> findAll() {
+		List<Travel> list=new ArrayList<Travel>();
+		Session myse=HibernateSessionFactory.getSession();
+		Transaction ts=null;
+		try {
+			ts=myse.beginTransaction();
+			list=(List<Travel>) myse.createQuery("from Travel o").list();
+			ts.commit();
+		} catch (HibernateException e) {
+			if (ts!=null) {
+				ts.rollback();
+			}
+			e.printStackTrace();
+		}finally {
+			myse.close();
+		}
+		return list;
+	}
+```
 
+更
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1ODk0NDg0MiwtMTM2MDY0MzQyMCwtMT
-IzMjE3MDIwNCwxNDg0ODY4MjE0LC0xMzY4NjY2MjQzLDQ0Mjc4
-OTQ1OSwxNjExNTM3MjY2LC03NzQwNjA0NDUsMTUxNjc0ODI1MS
-wtNDEwOTExNjY3LDE4Njk5MzQ0MzUsLTEwODE2MjE1MjFdfQ==
-
+eyJoaXN0b3J5IjpbMjU0NTU1MDgwLC0xMzYwNjQzNDIwLC0xMj
+MyMTcwMjA0LDE0ODQ4NjgyMTQsLTEzNjg2NjYyNDMsNDQyNzg5
+NDU5LDE2MTE1MzcyNjYsLTc3NDA2MDQ0NSwxNTE2NzQ4MjUxLC
+00MTA5MTE2NjcsMTg2OTkzNDQzNSwtMTA4MTYyMTUyMV19
 -->
