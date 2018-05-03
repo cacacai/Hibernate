@@ -2,7 +2,7 @@
 
 
 ---
-
+> 转载自http://wiki.jikexueyuan.com/project/hibernate/
 <p>在上一篇中学会了使用session来操作缓存以及数据库，现在来学习更详细的数据库操作。</p>
 <h1 id="hql查询">HQL查询</h1>
 <p>Hibernate 查询语言（HQL）是一种面向对象的查询语言，类似于 SQL，但不是去对表和列进行操作，而是面向对象和它们的属性。 HQL 查询被 Hibernate 翻译为传统的 SQL 查询从而对数据库进行操作。</p>
